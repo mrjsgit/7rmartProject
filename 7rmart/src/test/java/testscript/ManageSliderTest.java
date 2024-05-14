@@ -25,5 +25,8 @@ public class ManageSliderTest extends Base {
 	  manageslider.saveButtonClick();
 	  boolean isalertdisplayed = manageslider.isAlertDisplayed();
 	  Assert.assertTrue(isalertdisplayed,"Alert is not displayed on saving");
+	  manageslider.manageSliderTileClick();
+      manageslider.deleteButtonClick();
+
   }
 }

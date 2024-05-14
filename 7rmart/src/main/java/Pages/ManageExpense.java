@@ -31,6 +31,7 @@ public class ManageExpense
 	@FindBy(xpath="//input[@type='file']") private WebElement choosefile  ;
 	@FindBy(xpath="//button[text()='Save']") private WebElement savebutton ;
 	@FindBy(xpath="//button[@data-dismiss='alert']") private WebElement alert  ;
+	@FindBy(xpath="//p[text()='Manage Expense']") private WebElement manageexpenseradiobutton  ;
 	@FindBy(xpath="//a[contains(@onclick,'return confirm')]") private WebElement deleteicon;
 
 	
@@ -107,6 +108,10 @@ public class ManageExpense
 	public boolean isAlertDisplayed()
 	{
 	return alert.isDisplayed();
+	}
+	public void manageExpenseRadioButtonClick()
+	{
+		manageexpenseradiobutton.click();
 	}
 	public void deleteButtonClick()
 	{

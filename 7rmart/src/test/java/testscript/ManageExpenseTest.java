@@ -31,6 +31,9 @@ public class ManageExpenseTest extends Base {
 		  //manageexpense .chooseFileButtonClick();
 		  manageexpense.saveButtonClick();
 		  boolean isSavedAlertDisplayed = manageexpense.isAlertDisplayed();
-		  Assert.assertTrue(isSavedAlertDisplayed, "Alert is not displayed on clicking save button"); 
+		  Assert.assertTrue(isSavedAlertDisplayed, "Alert is not displayed on clicking save button");
+		  manageexpense.manageExpenseRadioButtonClick();
+		  manageexpense.deleteButtonClick();
+
   }
 }

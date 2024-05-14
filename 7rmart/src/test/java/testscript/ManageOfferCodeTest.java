@@ -31,6 +31,10 @@ public class ManageOfferCodeTest extends Base
 	  manageoffercode.saveButtonClick();
 	  boolean isSavedAlertDisplayed = manageoffercode.isAlertDisplayed();
 	  Assert.assertTrue(isSavedAlertDisplayed, "Alert is not displayed on clicking save button");
+	  manageoffercode.dashBoardClick();
+	  manageoffercode.manageOfferCodeTileClick();
+	  manageoffercode.deleteButtonClick();
+
   }
 }
  

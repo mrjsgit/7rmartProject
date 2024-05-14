@@ -27,6 +27,7 @@ public ManageOfferCode(WebDriver driver)
 @FindBy(xpath="//input[@id='main_img']") private WebElement choosefile  ;
 @FindBy(xpath="//button[@name='create']") private WebElement savebutton  ;
 @FindBy(xpath="//button[@data-dismiss='alert']") private WebElement alert  ;
+@FindBy(xpath="//p[text()='Dashboard']") private WebElement dashboard  ;
 @FindBy(xpath="//a[contains(@onclick,'return confirm')]") private WebElement deleteicon;
 
 
@@ -79,6 +80,11 @@ public void saveButtonClick()
 public boolean isAlertDisplayed()
 {
 return alert.isDisplayed();
+}
+
+public void dashBoardClick()
+{
+	dashboard.click();
 }
 
 public void deleteButtonClick()
