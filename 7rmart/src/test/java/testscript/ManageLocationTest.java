@@ -24,8 +24,8 @@ public class ManageLocationTest extends Base
 	  managelocation.newButtonClick();
 	  managelocation.countryDropDownField(1);
 	  managelocation.stateDropDownField(5);
-	  managelocation.passingTextToLocationField("Kothamangalam");
-	  managelocation.passingTextToDeliveryChargeField("250");
+	  managelocation.passingTextToLocationField("Thykkatusshery");
+	  managelocation.passingTextToDeliveryChargeField("5000");
 	  managelocation.saveButtonClick();
 	  boolean issavedalertdisplayed = managelocation.isAlertDisplayed();
 	  Assert.assertTrue(issavedalertdisplayed, "Alert is not shown on saving");

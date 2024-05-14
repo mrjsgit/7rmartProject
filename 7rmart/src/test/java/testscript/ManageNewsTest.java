@@ -26,7 +26,7 @@ public class ManageNewsTest extends Base {
 	  Assert.assertTrue(isSaveAlertDisplayed, "Alert is not displayed on clicking save button");
       managenews.manageNewsTileClick();
       managenews.editButtonclick();
-	  managenews.passingNewsText(" Nothing special:)");
+	  managenews.passingNewsText(" Nothing special");
 	  managenews.updateButtonClick();
 	
 	  }
