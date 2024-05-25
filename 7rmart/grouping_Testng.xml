@@ -1,0 +1,17 @@
+<suite name="Suite">
+	<parameter name="browser" value="chrome"></parameter>
+	<listeners>
+	<listener class-name="generatereport.Listeners"></listener>
+</listeners>
+  <test thread-count="5" name="Test">
+	  <groups>
+		  <run>
+			  <include name="reggression"></include>
+		  </run>
+	  </groups>
+	  <classes>
+		  <class name="testscript.ManagePageTest">	 
+		  </class>
+		   </classes>
+  </test> <!-- Test -->
+</suite><!-- Suite -->

@@ -1,0 +1,14 @@
+<suite name="Parallel Class Testing" parallel="classes" thread-count="2">
+<parameter name="browser" value="Chrome"></parameter>
+<listeners>
+	<listener class-name="generatereport.Listeners"></listener>
+</listeners>	
+  <test name="Test">
+    <classes>
+      <class name="testscript.ManageNewsTest">
+		</class>
+		<class name="testscript.ManagePageTest">
+		</class>
+    </classes>
+  </test> <!-- Test -->
+</suite><!-- Suite -->
