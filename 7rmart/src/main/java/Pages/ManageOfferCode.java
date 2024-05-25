@@ -1,10 +1,16 @@
 package Pages;
 
+import java.awt.AWTException;
+
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import constants.Constants;
+import utilities.FileUploadUtility;
+import utilities.PageUtility;
 
 public class ManageOfferCode 
 
@@ -65,16 +71,19 @@ public void passingValueToDescriptionField(String desc)
 	description.sendKeys(desc);
 }
 
-public void ChooseFileButtonClick()
+public void ChooseFileButtonClick() throws AWTException
 {
-	
+	FileUploadUtility fileuploadutility = new FileUploadUtility();
+	fileuploadutility.fileuploadUsingRobotClass(choosefile, Constants.MANAGESLIDERIMAGE);
+	//fileuploadutility.fileUploadUsingSendKeys(choosefile, Constants.MANAGESLIDERIMAGE);
 }
 
 public void saveButtonClick()
 {
-	JavascriptExecutor js=(JavascriptExecutor)driver;
-	js.executeScript("arguments[0].click();",savebutton);
-     //savebutton.click();	
+	//JavascriptExecutor js=(JavascriptExecutor)driver;
+	//js.executeScript("arguments[0].click();",savebutton);
+	PageUtility pageutility = new PageUtility();
+	pageutility.javaSriptClick(driver, savebutton);
 }
 
 public boolean isAlertDisplayed()

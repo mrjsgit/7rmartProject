@@ -1,17 +1,22 @@
 package testscript;
 
+import java.io.IOException;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import Pages.LoginPage;
 import Pages.ManageExpense;
+import utilities.ExcelUtility;
 
 public class ManageExpenseTest extends Base {
   @Test
-  public void addExpense () 
+  public void addExpense () throws IOException 
   {
-	      String username = "admin";
-		  String password = "admin";
+	      //String username = "admin";
+		 // String password = "admin";
+	    String username = ExcelUtility.getStringData(1,0,"LoginPage"); //1,0: data index,loginpage pg name
+	    String password = ExcelUtility.getStringData(1,1,"LoginPage");
 		  LoginPage loginpage = new LoginPage(driver);
 		  loginpage.enterUserNameOnUserNameField(username);
 		  loginpage.enterPasswordOnPasswordField(password);

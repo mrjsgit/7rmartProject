@@ -1,9 +1,16 @@
 package Pages;
 
+import java.awt.AWTException;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Wait;
+
+import constants.Constants;
+import utilities.FileUploadUtility;
+import utilities.WaitUtility;
 
 public class ManageSlider 
 {
@@ -33,10 +40,12 @@ public void newButtonClick()
 	newbutton.click();
 }
 
-public void chooseFileButtonClick()
+public void chooseFileButtonClick() throws AWTException
 {
-	
-}
+	FileUploadUtility fileuploadutility = new FileUploadUtility();
+	//fileuploadutility.fileUploadUsingSendKeys(choosefilebutton, Constants.MANAGESLIDERIMAGE);
+	fileuploadutility.fileuploadUsingRobotClass(choosefilebutton, Constants.MANAGESLIDERIMAGE);
+			}
 
 public void passingValueTolinkTextField(String txt)
 {

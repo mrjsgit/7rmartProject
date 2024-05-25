@@ -7,12 +7,13 @@ public class ExtendReportUtility
 {
 	public static final ExtentReports extentReports = new ExtentReports();
 
-	public synchronized static ExtentReports createExtentReports() {
+	public synchronized static ExtentReports createExtentReports() 
+	{
 		ExtentSparkReporter reporter = new ExtentSparkReporter("./extent-reports/extent-report.html");
 		reporter.config().setReportName("7RMart  Project");
 		extentReports.attachReporter(reporter);
 		extentReports.setSystemInfo("Organization", "Obsqura");
-		extentReports.setSystemInfo("Name", "Amalu");
+		extentReports.setSystemInfo("Name", "Maria");
 		return extentReports;
 	}
 }

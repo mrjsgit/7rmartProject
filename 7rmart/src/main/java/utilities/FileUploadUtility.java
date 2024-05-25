@@ -15,10 +15,9 @@ public class FileUploadUtility
 		element.sendKeys(path);
 	  }
 	
-  public void fileuploadUsingRobertClass(WebElement element,String path) throws AWTException 
+  public void fileuploadUsingRobotClass(WebElement element,String path) throws AWTException 
       {
-		
-		StringSelection ss = new StringSelection(path);
+       StringSelection ss = new StringSelection(path);
 		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
 		Robot robot = new Robot();
 		robot.delay(250);

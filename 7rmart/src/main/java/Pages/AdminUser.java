@@ -7,6 +7,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
+import utilities.PageUtility;
+
 public class AdminUser 
 {
 WebDriver driver;
@@ -17,7 +19,7 @@ public AdminUser(WebDriver driver)
 	PageFactory.initElements(driver, this);
 }
 
-@FindBy(xpath="//p[text()='Admin Users']") private WebElement adminusertile;
+@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/list-admin']") private WebElement adminusertile;
 @FindBy(xpath="//a[@onclick='click_button(1)']") private WebElement newbutton;
 @FindBy(xpath="//input[@id='username']") private WebElement usernamefield;
 @FindBy(xpath="//input[@id='password']") private WebElement passwordfield;
@@ -47,10 +49,11 @@ public void passingPassword(String txt)
 	passwordfield.sendKeys(txt);
 }
 
-public void dropdownFieldSelection(int num)
+public void dropdownFieldSelection(int dropdown)
 {
-Select select = new Select(dropdownfield);
-select.selectByIndex(num);
+	PageUtility pageutility =new PageUtility ();
+	pageutility.selectDropDownByIndexValue(dropdownfield, dropdown);
+
 }
 public void saveButtonClick()
 {
@@ -61,4 +64,6 @@ public boolean isAlertPopupDisplayed()
 {
 	return alertpopup.isDisplayed();
 }
+
+
 }

@@ -22,20 +22,36 @@ public class PageUtility
 		actions.clickAndHold(element).build().perform();
 	}
 	
-	public void dropdown(WebElement element,int index)
-	{
-		Select select = new Select(element);
-		select.selectByIndex(index);
+	public void dragAndDrop(WebElement dragableItem, WebElement dropItem, WebDriver driver) {
+		Actions actions = new Actions(driver);
+		actions.dragAndDrop(dragableItem, dropItem);
 	}
-	
-	public void dragandDrop()
-	{
-		Actions action = new Actions(driver);
-		action.moveToElement(drag).build().perform();
-		action.doubleClick(drag).build().perform();
-		action.contextClick(drag).build().perform();   //method for 'right' click
-		action.dragAndDrop(drag, drop).build().perform();
+
+	public void singleClick(WebElement dragableItem, WebDriver driver) {
+		Actions actions = new Actions(driver);
+		actions.moveToElement(dragableItem).click().perform();
 	}
+
+	public void doubleClick(WebElement dragableItem, WebDriver driver) {
+		Actions actions = new Actions(driver);
+		actions.doubleClick(dragableItem);
+	}
+		
+    public void rightClick(WebElement dragableItem, WebDriver driver) {
+			Actions actions = new Actions(driver);
+			actions.contextClick(dragableItem);
+		}
+
+		public void getAttributes(WebElement element, String attribute) {
+			element.getAttribute(attribute);
+		}
 	
-	
+		
+		public void selectDropDownByIndexValue(WebElement element,int value)
+		{
+			Select select = new Select(element);
+			select.selectByIndex(value);
+		}
+		
+		
 }

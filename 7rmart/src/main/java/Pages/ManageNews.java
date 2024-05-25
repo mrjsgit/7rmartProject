@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import utilities.PageUtility;
+
 public class ManageNews
 
 {
@@ -27,16 +29,17 @@ public class ManageNews
 	
 	public void manageNewsTileClick()
 	{
-		JavascriptExecutor executor = (JavascriptExecutor)driver;
-		executor.executeScript("arguments[0].click();",managenewstile);
-		managenewstile.click();
+		
+		PageUtility pageutility = new PageUtility();
+		pageutility.javaSriptClick(driver, managenewstile);
+		//JavascriptExecutor executor = (JavascriptExecutor)driver;
+		//executor.executeScript("arguments[0].click();",managenewstile);
 		
 	}
 
 	public void newbuttonClick()
 	{
-		//JavascriptExecutor executor = (JavascriptExecutor)driver;
-		//executor.executeScript("arguments[0].click();",newbutton);
+
 		newbutton.click();
 	}
 	

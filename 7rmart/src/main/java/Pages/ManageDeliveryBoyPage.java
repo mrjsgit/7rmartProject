@@ -11,7 +11,7 @@ public class ManageDeliveryBoyPage
 
 {
 WebDriver driver;
-int i=0;
+
 public ManageDeliveryBoyPage(WebDriver driver)
 {
 this.driver=driver;
@@ -46,31 +46,20 @@ public boolean checkTableDisplayed()
 {
 	return table.isDisplayed();
 }
-
-public boolean columnDataCheck(String data)
-{	
-	boolean result;
+ 
+	public boolean tableDataCheck(String input)
 	{
-       for(WebElement list:column1)
-	   {
-	      if(!data.equalsIgnoreCase(list.getText()));
-	      {     		  
-	    	  i=i+1;
-	      }
-	   }
-    
-	if(i==0)
-    result=true; //only given data present 
-	else
-	result=false;
-	}
-	return result;
-}
+		  // Loop through each element in the first column
+		  for (WebElement data : column1)
+		  {
+		           if (!data.getText().equalsIgnoreCase(input)) 
+		           {
+		            return false;
+		           }
 
+		  }
+		  // If all elements match the search input, return true
+		  return true;
+		}
 
 }
-
-
-
-
-

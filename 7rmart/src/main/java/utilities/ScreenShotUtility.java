@@ -16,8 +16,8 @@ public class ScreenShotUtility
 		File screenShot = scrShot.getScreenshotAs(OutputType.FILE);
 		String timeStamp = new SimpleDateFormat("dd_MM_yyyy_hh_mm_ss").format(new Date());
 
-		File f1 = new File(System.getProperty("user.dir ") + "//OutputScreenShot");
-		if (!f1.exists()) {
+		File f1 = new File(System.getProperty("user.dir ") + "//OutputScreenShot"); //folder creation
+		if (!f1.exists()) {            //if accidently folder got deleted, creates
 			f1.mkdirs();
 		}
 

@@ -6,6 +6,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
+import utilities.PageUtility;
+import utilities.WaitUtility;
+
 public class ManageLocation 
 {
 WebDriver driver;
@@ -27,6 +30,8 @@ public ManageLocation(WebDriver driver)
 
 public void manageLocationTileClick()
 {
+	WaitUtility waitutility = new WaitUtility();
+	waitutility.waitForElement(driver, managelocationtile);
 	managelocationtile.click();
 }
 
@@ -36,13 +41,13 @@ public void newButtonClick()
 }
 public void countryDropDownField(int num)
 {
-	Select select = new Select(countrydropdown);
-	select.selectByIndex(num);
+	PageUtility pageutility = new PageUtility();
+    pageutility.selectDropDownByIndexValue(countrydropdown, num);	
 }
 public void stateDropDownField(int num)
 {
-	Select select = new Select(statedropdown);
-	select.selectByIndex(num);
+	PageUtility pageutility = new PageUtility();
+    pageutility.selectDropDownByIndexValue(statedropdown, num);
 }
 
 public void passingTextToLocationField(String txt)
