@@ -19,7 +19,7 @@ public class ManageLocationTest extends Base
 	 // String password="admin";
 	    String username = ExcelUtility.getStringData(1,0,"ManageLocation"); //1,0: data index,loginpage pg name
 	    String password = ExcelUtility.getStringData(1,1,"ManageLocation");
-	    String location = ExcelUtility.getStringData(1,1,"ManageLocation");
+	    String location = ExcelUtility.getStringData(1,2,"ManageLocation");
 	    String charge = ExcelUtility.getIntegerData(1,3,"ManageLocation");
 
 	  LoginPage loginpage = new LoginPage(driver);

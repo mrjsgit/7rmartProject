@@ -47,19 +47,5 @@ public boolean checkTableDisplayed()
 	return table.isDisplayed();
 }
  
-	public boolean tableDataCheck(String input)
-	{
-		  // Loop through each element in the first column
-		  for (WebElement data : column1)
-		  {
-		           if (!data.getText().equalsIgnoreCase(input)) 
-		           {
-		            return false;
-		           }
-
-		  }
-		  // If all elements match the search input, return true
-		  return true;
-		}
 
 }

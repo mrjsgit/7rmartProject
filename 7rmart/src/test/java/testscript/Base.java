@@ -21,9 +21,10 @@ public class Base {
   public ScreenShotUtility scrshot; //declaring varable globally
   @BeforeMethod
   @Parameters("browser")     //browser is the variable
-  public void initializeBrowser(String browser) throws Exception 
+  public void initializeBrowser(String browser) throws Exception  
   {
 	if(browser.equalsIgnoreCase("chrome"))
+	 
 	{
 		driver= new ChromeDriver();
 	}
@@ -40,8 +41,8 @@ public class Base {
 	else
 	{
 		throw new Exception("invalid browser");
-	}
-	// driver = new ChromeDriver();
+	} 
+	 driver = new ChromeDriver();
 	driver.get("https://groceryapp.uniqassosiates.com/admin/login");
 	driver.manage().window().maximize();
 	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(WaitUtility.IMPLICIT_WAIT));
@@ -50,7 +51,7 @@ public class Base {
   public void browserQuit(ITestResult iTestResult) throws IOException {
 		if (iTestResult.getStatus() == ITestResult.FAILURE) {
 			scrshot = new ScreenShotUtility();
-			scrshot.getScreenShot(driver, iTestResult.getName());
+			scrshot.captureFailureScreenShot(driver, iTestResult.getName());
 		}
 
 		driver.quit();

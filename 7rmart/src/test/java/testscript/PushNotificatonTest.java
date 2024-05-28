@@ -17,8 +17,8 @@ public class PushNotificatonTest extends Base {
 	  //String password= "admin";
 	  String username = ExcelUtility.getStringData(1,0,"PushNotification"); //1,0: data index,loginpage pg name
 	  String password = ExcelUtility.getStringData(1,1,"PushNotification");
-	  String title = ExcelUtility.getStringData(1,1,"PushNotification");
-	  String description = ExcelUtility.getStringData(1,1,"PushNotification");
+	  String title = ExcelUtility.getStringData(1,2,"PushNotification");
+	  String description = ExcelUtility.getStringData(1,3,"PushNotification");
 
 
 	  LoginPage loginpage = new LoginPage(driver);

@@ -41,7 +41,6 @@ public class ExcelUtility
 	}
 }
 
-
 /*static variable is called by classname.var
   static method is called by classname.methodname
   For instance variable and methods, we need to create object*/

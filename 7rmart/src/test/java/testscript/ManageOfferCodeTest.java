@@ -12,7 +12,7 @@ import utilities.ExcelUtility;
 
 public class ManageOfferCodeTest extends Base
 {
-  @Test
+  @Test(retryAnalyzer=retry.Retry.class)
   public void addOfferCode() throws IOException, AWTException
   {
 	 // String username = "admin";

@@ -10,24 +10,21 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.io.FileHandler;
 
 public class ScreenShotUtility 
-{
-	public void getScreenShot(WebDriver driver, String failedTestCase) throws IOException {
-		TakesScreenshot scrShot = (TakesScreenshot) driver;
-		File screenShot = scrShot.getScreenshotAs(OutputType.FILE);
-		String timeStamp = new SimpleDateFormat("dd_MM_yyyy_hh_mm_ss").format(new Date());
-
-		File f1 = new File(System.getProperty("user.dir ") + "//OutputScreenShot"); //folder creation
-		if (!f1.exists()) {            //if accidently folder got deleted, creates
-			f1.mkdirs();
+{	
+	public void captureFailureScreenShot(WebDriver driver, String name) throws IOException {
+		 //Interface & method for Capture Screenshot
+		 TakesScreenshot scrShot =(TakesScreenshot)driver;
+		 File screenShot = scrShot.getScreenshotAs(OutputType.FILE); //screenshot will store in temporary path "screenShot"
+		 
+		 File f1=new File(System.getProperty("user.dir")+"\\OutputScreenshots");//Generating folder using Java
+		 if (!f1.exists()){
+		   f1.mkdirs();// mkdir --> will create folder using java make directory
 		}
+		String timeStamp = new SimpleDateFormat("dd_MM_yyyy_hh_mm_ss").format(new Date(0));//date time capture using java
 
-		String destination = System.getProperty("user.dir") + "//outputScreenShot//" +
-
-				failedTestCase + timeStamp + ".png";
-
-		File finalDestination = new File(destination);
-
-		FileHandler.copy(screenShot, finalDestination);
-	}
-		
+		 
+		 File finalDestination=new File(System.getProperty("user.dir")+ "\\OutputScreenshots\\" + name + "_" + timeStamp + ".png");
+		 FileHandler.copy(screenShot, finalDestination);//copy screenshot from temp path to project folder
+		 
+		  }
 }

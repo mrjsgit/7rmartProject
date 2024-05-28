@@ -41,7 +41,6 @@ public class ManageExpense
 	{
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].click();",manageexpensetile);
-	//	manageexpensetile.click();
 	}
 	
 	
@@ -102,7 +101,6 @@ public class ManageExpense
 	{
 		JavascriptExecutor js=(JavascriptExecutor)driver;
 		js.executeScript("arguments[0].click();",savebutton);
-	//savebutton.click();
 	}
 	
 	public boolean isAlertDisplayed()

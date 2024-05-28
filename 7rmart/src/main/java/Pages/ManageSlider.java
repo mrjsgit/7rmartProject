@@ -6,11 +6,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Wait;
-
 import constants.Constants;
 import utilities.FileUploadUtility;
-import utilities.WaitUtility;
 
 public class ManageSlider 
 {
