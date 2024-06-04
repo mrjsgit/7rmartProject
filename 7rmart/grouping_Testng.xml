@@ -1,17 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
-	<parameter name="browser" value="chrome"></parameter>
-	<listeners>
-	<listener class-name="generatereport.Listeners"></listener>
+<parameter name="browser" value="Chrome"/>
+<listeners>
+<listener class-name="generatereport.Listeners"/>
 </listeners>
-  <test thread-count="5" name="Test">
-	  <groups>
-		  <run>
-			  <include name="reggression"></include>
-		  </run>
-	  </groups>
-	  <classes>
-		  <class name="testscript.ManagePageTest">	 
-		  </class>
-		   </classes>
-  </test> <!-- Test -->
-</suite><!-- Suite -->
+<test thread-count="5" name="Test">
+<groups>
+<run>
+<include name="reggression"/>
+</run>
+</groups>
+<classes>
+<class name="testscript.ManagePageTest"> </class>
+</classes>
+</test>
+<!--  Test  -->
+</suite>
+<!--  Suite  -->

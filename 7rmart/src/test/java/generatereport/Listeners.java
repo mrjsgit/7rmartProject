@@ -1,5 +1,7 @@
 package generatereport;
 
+import java.lang.reflect.Field;
+
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
@@ -36,7 +38,7 @@ public class Listeners extends Base implements ITestListener
 
 	}
 	
-	public void onTestFailure(ITestResult result) {
+/*public void onTestFailure(ITestResult result) {
 
 		ITestListener.super.onTestFailure(result);
 		extentTest.get().log(Status.FAIL, "Test Failed");
@@ -65,7 +67,36 @@ public class Listeners extends Base implements ITestListener
 					.get(result.getInstance());
 		} catch (Exception e) {
 		}
+	}   
+	*/
+	
+	public void onTestFailure(ITestResult result)
+	{
+        try 
+           {
+            // Attempting to access a field named 'driver'
+            Field field = result.getTestClass().getRealClass().getDeclaredField("driver");
+            field.setAccessible(true);
+            WebDriver driver = (WebDriver) field.get(result.getInstance());
+            // Perform your actions with the driver here, e.g., taking a screenshot
+             } 
+        catch (NoSuchFieldException e)
+             {
+            System.err.println("NoSuchFieldException: The field 'driver' does not exist in the test class.");
+            e.printStackTrace();
+             } 
+        catch (IllegalAccessException e) 
+             {
+            System.err.println("IllegalAccessException: Failed to access the 'driver' field.");
+            e.printStackTrace();
+             } 
+        catch (Exception e) 
+                {
+            System.err.println("Exception: An unexpected error occurred.");
+            e.printStackTrace();
+                }
 	}
+	
       public void onTestSkipped(ITestResult result) {
 		ITestListener.super.onTestSkipped(result);
 		extentTest.get().log(Status.SKIP, "Test Skipped");

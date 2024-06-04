@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class WaitUtility 
 {
 	public static final long IMPLICIT_WAIT = 10;
-	public static final long EXPLICIT_WAIT = 50;
+	public static final long EXPLICIT_WAIT = 20;
 	
 	public void waitForElement(WebDriver driver, WebElement target) 
 	{
@@ -35,10 +35,10 @@ public class WaitUtility
 	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICIT_WAIT));
 	    wait.until(ExpectedConditions.elementSelectionStateToBe(element, false));
     }
-	public void implicitWait(WebDriver driver) {
-		driver.manage().timeouts().implicitlyWait(IMPLICIT_WAIT, TimeUnit.SECONDS) ;
+	//public void implicitWait(WebDriver driver) {
+		//driver.manage().timeouts().implicitlyWait(IMPLICIT_WAIT, TimeUnit.SECONDS) ;
 
-	}
+	//}
 	public void waitForClick(WebDriver driver,WebElement element) {
 		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
 	    wait.until(ExpectedConditions.elementToBeClickable(element));

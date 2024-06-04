@@ -4,6 +4,9 @@ public class Constants
 {
 public static final String TESTDATAFILE = System.getProperty("user.dir")+"\\src\\test\\resources\\TestData.xlsx";
 public static final String  MANAGESLIDERIMAGE = System.getProperty("user.dir")+"\\src\\test\\resources\\image.jpg";
+
+public static final String CONFIGfILE = System.getProperty("user.dir")+"\\src\\main\\resources\\config.properties";
+
 }
 
 
