@@ -37,7 +37,6 @@ public class LoginTest extends Base
 	
   }
 @Test(retryAnalyzer=retry.Retry.class , groups = {"reggression"},description = "verifying user able to login with invalid username") // just desc of method
-
 public void verifyUserIsAbleToLoginWithInvalidUserNameValidPassword() throws IOException
 {
 	//String username="test";
